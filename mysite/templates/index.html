@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+	<style>
+		body{
+			
+			width:auto;
+			height: 100%;
+			background-size: 100%;
+			background-repeat: no-repeat;
+			font-family: 'Tangerine', serif;
+        	font-size: 48px;
+		}
+		img{
+			height: 200px;
+			width: 100px;
+		}
+		th{
+			margin: 20px 20px;
+			padding: 20px 20px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		{% include 'navbar.html' %}
+	</header>
+	<section class="section">
+		
+			<table align="center" style="">
+				<tr>
+					<th>
+						<div class="card" style="width: 18rem;">
+ 							<img src="{% static 'images/bg_images/gandhi.jpg' %}" class="card-img-top" alt="...">
+  						</div>
+					</th>
+					<th>
+						<div class="card" style="width: 18rem;">
+ 							<img src="{% static 'images/bg_images/bhagatsingh.jpg' %}" class="card-img-top" alt="...">
+  						</div>
+					</th>
+					<th>
+						<div class="card" style="width: 18rem;">
+ 							<img src="{% static 'images/bg_images/horoor.jpg' %}" class="card-img-top" alt="...">
+  						</div>
+					</th>
+				</tr>
+				<tr>
+					<th>
+						<div class="card" style="width: 18rem;">
+ 							<img src="{% static 'images/bg_images/universe.jpg' %}" class="card-img-top" alt="...">
+  						</div>
+					</th>
+					<th>
+						<div class="card" style="width: 18rem;">
+ 							<img src="{% static 'images/bg_images/story.jpg' %}" class="card-img-top" alt="...">
+  						</div>
+					</th>
+					<th>
+						<div class="card" style="width: 18rem;">
+ 							<img src="{% static 'images/bg_images/adventure.jpg' %}" class="card-img-top" alt="...">
+  						</div>
+					</th>
+				</tr> 
+
+			</table>
+
+	</section>
+	<footer style="text-align: center;">
+		&copy;Copyright 2020, yogiptdr999@gmail.com &trade;  
+	</footer>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Thankyou</title>
+</head>
+<body>
+	{% include 'navbar.html' %}
+
+	<table align="center" style="background-color: grey">
+		<tr style="margin-bottom: 20px;">
+			<th style="margin-bottom: 30px; padding: 30px;">
+				 Mr. <b>{{ user_info.full_name }}</b> , Thankyou for shopping with us, Your Product <b>{{ book_info.book_title }}</b> will be delivered within 7 days.
+			</th>
+		</tr>
+		<tr>
+			<th>
+				<table align="center" style="margin-left: 300px">
+					<tr><th><img src="{{ book_info.book_image.url }}"></th></tr>
+					<tr><th>Book Title : <b>{{ book_info.book_title }}</b></th></tr>
+					<tr><th>Author : {{ book_info.Author_name }}</th></tr>
+					<tr><th>Price : <b><span>&#8377;</span>{{ book_info.price }}</b></th></tr>
+					<tr><th>-------------------------------------------------</th></tr>
+					<tr><th>Customer Name : <b>{{ user_info.full_name }}</b></th></tr>
+					<tr><th>Customer Email : <b>{{ user_info.email_id }}</b></th></tr>
+					<tr><th>Address : <b>{{ user_info.address }}</b></th></tr>
+				</table>
+			</th>
+		</tr>
+	</table>
+</body>
+</html>

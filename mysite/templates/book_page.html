@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Books Page</title>
+	<style>
+		body{
+			width:auto;
+			height: 100%;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+        table{
+            font-size: 1.2rem;
+            background-color: grey;
+            color: white;
+        }
+        tr{
+            text-align: center;
+        }
+        th{
+            padding: 50px;
+        }
+        input{
+            size: 5;
+        }
+	</style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+	{% if book_info %}
+	<table width="1200px" align="center">
+    	<tr>
+    		<th>Book Image</th>
+    		<th>Title</th>
+    		<th>Author</th>
+    		<th>Price</th>
+    	</tr>
+    	
+        {% for info in book_info %}
+        <tr> 
+            <th><div><img src='{{ info.book_image.url }}' width="100px" height="100px"></div></th>
+            <th>{{ info.book_title }}</th>
+            <th>{{ info.Author_name }}</th>
+            <th><span>&#8377;</span>{{ info.price }}</th>
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <th><input type="hidden" name="x1" value="{{ info.book_id }}" size="2"></th>
+                <th><button type="submit">Buy</button></th>
+            </form>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+</html> 
